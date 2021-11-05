@@ -61,6 +61,8 @@ fn main() {
     let fp2_m = FP32WithFlag::new(2.0, false);
     let fp3_m = FP32WithFlag::new(3.3, true);
     
+    println!("sizes(fp1_m) = {} bytes.", std::mem::size_of::<FP32WithFlag>());
+
     println!( "fp1_m({:.10}, true) = ({:.10}, {}) => dif: {:.10}", 10.0_f32, fp1_m.get_val(), fp1_m.get_flag(), (10.0_f32 - fp1_m.get_val()).abs());
     println!( "fp2_m({:.10}, false) = ({:.10}, {}) => dif: {:.10}", 2_f32, fp2_m.get_val(), fp2_m.get_flag(), (2.0_f32 - fp2_m.get_val()).abs());
     println!( "fp3_m({:.10}, false) = ({:.10}, {}) => dif: {:.10}", 3.3_f32, fp3_m.get_val(), fp3_m.get_flag(), (3.3_f32 - fp3_m.get_val()).abs());
